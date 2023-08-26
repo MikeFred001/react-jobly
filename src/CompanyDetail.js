@@ -16,11 +16,10 @@ function CompanyDetail() {
   const [company, setCompany] = useState();
 
   return (
-    <div>
+    <div className="CompanyDetail">
       <JobCardList jobs={ 'foobar' } />
     </div>
   )
 }
-// className
 
 export default CompanyDetail;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import CompanyCard from "./CompanyCard.js";
 import SearchForm from "./SearchForm.js";
@@ -17,6 +17,15 @@ import JoblyApi from "./api.js";
 function CompanyList() {
   const [companies, setCompanies] = useState([]);
 
+  // grabs companies using JoblyApi and sets state on mount
+  useEffect(function fetchCompaniesOnMount() {
+    async function fetchCompanies() {
+      const companiesResponse = await JoblyApi.getCompanies();
+      setCompanies(companiesResponse);
+    }
+    fetchCompanies();
+  }, [ ]);
+
   function filterList() {
 
   }
@@ -31,8 +40,7 @@ function CompanyList() {
   return (
     <div className="CompanyList">
       <SearchForm filterList={ filterList }/>
-      <CompanyCard company={ 'foobar' }/>
-      <CompanyCard company={ 'foobar' }/>
+      { companies.map( c => <CompanyCard key={c.handle} company={c} />) }
     </div>
   );
 }

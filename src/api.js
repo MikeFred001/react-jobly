@@ -51,7 +51,13 @@ class JoblyApi {
   static async getCompanies() {
     let res = await this.request(`companies`);
     console.log("GET COMPANIES", res.companies);
-    return res.companies;
+    const companiesWithFullLogoUrl = res.companies.map( c => {
+      return c.logoUrl === null
+      // ? c : { ...c, logoUrl: `${BASE_URL}${c.logoUrl}`}
+      ? c : { ...c, logoUrl: `/logo.png`}
+    })
+    console.log("companiesWithFullLogoUrl", companiesWithFullLogoUrl)
+    return companiesWithFullLogoUrl;
   }
 
   /** Get all jobs */
