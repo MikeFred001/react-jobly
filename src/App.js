@@ -1,13 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import Navigation from "./Navigation.js";
 import RoutesList from "./RoutesList.js";
+import { BrowserRouter } from "react-router-dom";
+import Navigation from "./Navigation.js";
 
 function App() {
   return (
     <div className="App">
-      <Navigation />
-      <RoutesList />
+      <BrowserRouter>
+        <Navigation />
+        <RoutesList />
+      </BrowserRouter>
     </div>
   );
 }

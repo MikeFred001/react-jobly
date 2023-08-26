@@ -12,7 +12,7 @@ function JobList() {
   return (
     <div className="JobList">
       <SearchForm filterList={ filterList }/>
-      <JobCardList jobs={ jobs }/>
+      <JobCardList jobs={ 'foobar' }/>
     </div>
   );
 }

@@ -6,7 +6,9 @@ function CompanyDetail() {
 
   return (
     <div>
-      <JobCardList jobs={ company?.jobs } />
+      <JobCardList jobs={ 'foobar' } />
     </div>
   )
 }
+
+export default CompanyDetail;
