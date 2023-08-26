@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 /** Renders a company card
  *
  * Props:
@@ -13,21 +15,23 @@ function CompanyCard({ company }) {
 
   return (
     <div className="CompanyCard">
-      { company.logoUrl === null
+      {company.logoUrl === null
         ? ''
         : <img
-            src={company.logoUrl}
-            alt={company.name}
-            width={'50px'}
-            height={'50px'}
+          src={company.logoUrl}
+          alt={company.name}
+          width={'50px'}
+          height={'50px'}
         ></img>
       }
-      <div className="CompanyCard-name">
-        <h3>{company.name}</h3>
-      </div>
-      <div className="CompanyCard-description">
-        <p>{company.description}</p>
-      </div>
+      <Link to={`/companies/${company.handle}`}>
+        <div className="CompanyCard-name">
+          <h3>{company.name}</h3>
+        </div>
+        <div className="CompanyCard-description">
+          <p>{company.description}</p>
+        </div>
+      </Link>
     </div>
   );
 }

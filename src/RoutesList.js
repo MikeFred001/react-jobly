@@ -18,13 +18,13 @@ import Home from "./Home.js";
 function RoutesList() {
   return (
     <Routes>
-      <Route path="/companies" element={ <CompanyList /> }/>
-      <Route path="/jobs" element={ <JobList /> }/>
-      <Route path="/companies/:handle" element={ <CompanyDetail /> }/>
-      <Route path="/" element={ <Home /> }/>
+      <Route path="/companies" element={<CompanyList />} />
+      <Route path="/jobs" element={<JobList />} />
+      <Route path="/companies/:handle" element={<CompanyDetail />} />
+      <Route path="/" element={<Home />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
-  )
+  );
 }
 
 export default RoutesList;

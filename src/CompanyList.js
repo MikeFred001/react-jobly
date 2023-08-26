@@ -20,16 +20,17 @@ function CompanyList() {
     isLoading: true
   });
 
-  // grabs companies using JoblyApi and sets state on mount
+  // fetches and sets a list of companies; sets isLoading to false
   useEffect(function fetchCompaniesOnMount() {
     async function fetchCompanies() {
       const companiesResponse = await JoblyApi.getCompanies();
       setCompanies({
         data: companiesResponse,
-        isLoading: false});
+        isLoading: false
+      });
     }
     fetchCompanies();
-  }, [ ]);
+  }, []);
 
   // Filters company results based on search term and updates company data
   async function filterList(searchTerm) {
@@ -41,18 +42,12 @@ function CompanyList() {
     });
   }
 
-  // JoblyApi.getCompanies();
-  // JoblyApi.getCompany("anderson-arias-morrow");
-  // JoblyApi.getJobs();
-  // JoblyApi.searchJobs('a');
-  // JoblyApi.searchCompanies('ander');
-
   if (companies.isLoading) return <h3>Loading...</h3>;
 
   return (
     <div className="CompanyList">
-      <SearchForm filterList={ filterList }/>
-      { companies.data.map( c => <CompanyCard key={c.handle} company={c} />) }
+      <SearchForm filterList={filterList} />
+      {companies.data.map(c => <CompanyCard key={c.handle} company={c} />)}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import "./Navigation.css";
 
 /** Displays Navigation bar
  *
@@ -13,11 +13,11 @@ import { Link } from "react-router-dom";
 function Navigation() {
   return (
     <div className="Navigation">
-      <Link to="/">Home</Link>
-      <Link to="/companies">Companies</Link>
-      <Link to="/jobs">Jobs</Link>
+      <Link className="Navigation-link" to="/">Home</Link>
+      <Link className="Navigation-link" to="/companies">Companies</Link>
+      <Link className="Navigation-link" to="/jobs">Jobs</Link>
     </div>
-  )
+  );
 }
 
 export default Navigation;

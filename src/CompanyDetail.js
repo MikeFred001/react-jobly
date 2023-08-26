@@ -21,26 +21,28 @@ function CompanyDetail() {
   });
   console.log("COMPANY DETAIL STATE", company);
 
+  // fetches and sets company details; sets isLoading to false
   useEffect(function fetchCompanyOnMount() {
     console.log("FETCH COMPANY RAN");
     async function fetchCompany() {
       const companyResponse = await JoblyApi.getCompany(handle);
       setCompany({
         data: companyResponse,
-        isLoading: false});
+        isLoading: false
+      });
     }
     fetchCompany();
-  }, [ ]);
+  }, []);
 
   if (company.isLoading) return <h3>Loading...</h3>;
 
   return (
     <div className="CompanyDetail">
-      <h1 className="CompanyDetail-title">{ company.title }</h1>
-      <p className="CompanyDetail-description">{ company.description }</p>
-      <JobCardList jobs={ company.jobs } />
+      <h1 className="CompanyDetail-name">{company.data.name}</h1>
+      <p className="CompanyDetail-description">{company.data.description}</p>
+      <JobCardList jobs={company.data.jobs} />
     </div>
-  )
+  );
 }
 
 export default CompanyDetail;

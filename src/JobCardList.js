@@ -4,7 +4,7 @@ import JobCard from "./JobCard.js";
 /** Renders a list of JobCards
  *
  * Props:
- *  - jobs
+ *  - jobs: a list of jobs { [job, ... ] }
  *
  * State:
  *  - None
@@ -14,8 +14,7 @@ function JobCardList({ jobs }) {
 
   return (
     <div className="JobCardList">
-      <JobCard company={ 'foobar' }/>
-      <JobCard company={ 'foobar' }/>
+      {jobs.map(j => <JobCard job={j} />)}
     </div>
   );
 }
