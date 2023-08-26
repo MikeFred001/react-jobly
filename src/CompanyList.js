@@ -32,7 +32,7 @@ function CompanyList() {
     fetchCompanies();
   }, []);
 
-  // Filters company results based on search term and updates company data
+  // Filters company results based on search term and updates state
   async function filterList(searchTerm) {
     console.log("SEARCH TERM", searchTerm);
     const companies = await JoblyApi.searchCompanies(searchTerm);

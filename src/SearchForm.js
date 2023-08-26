@@ -7,6 +7,7 @@ import { useState } from "react";
  *
  * State:
  *  - formData like { searchTerm }
+ *  -- searchTerm is key and always a string
  *
  * { JobList, CompanyList } -> SearchForm */
 function SearchForm({ filterList }) {
@@ -24,7 +25,10 @@ function SearchForm({ filterList }) {
   /** Handles sending search term to callback function */
   function handleSubmit(evt) {
     evt.preventDefault();
-    filterList(formData.searchTerm);
+
+    // if no search term is provided, don't search again
+    if (formData.searchTerm.length > 0) filterList(formData.searchTerm);
+
     setFormData({ searchTerm: "" });
   }
 

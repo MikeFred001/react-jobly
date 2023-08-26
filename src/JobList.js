@@ -12,7 +12,7 @@ import JoblyApi from "./api.js";
  *  - none
  *
  * State:
- *  - jobs { [job, ... ] }
+ *  - jobs { data: [{job}, ...], isLoading: bool }
  *
  * RoutesList -> JobList -> { SearchForm, JobCardList }  */
 function JobList() {
@@ -33,7 +33,7 @@ function JobList() {
     fetchJobs();
   }, []);
 
-  // Filters company results based on search term and updates company data
+  // Filters company results based on search term and updates job list data
   async function filterList(searchTerm) {
     console.log("SEARCH TERM", searchTerm);
     const jobs = await JoblyApi.searchJobs(searchTerm);

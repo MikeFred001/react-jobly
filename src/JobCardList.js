@@ -14,7 +14,7 @@ function JobCardList({ jobs }) {
 
   return (
     <div className="JobCardList">
-      {jobs.map(j => <JobCard job={j} />)}
+      {jobs.map(j => <JobCard key={j.id} job={j} />)}
     </div>
   );
 }
