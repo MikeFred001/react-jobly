@@ -10,9 +10,13 @@
 }
 
 .CompanyCard-name {
+  font-size:1.25rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .CompanyCard-description {
+  font-size:.9rem;
 }
 
 .CompanyCard-link {

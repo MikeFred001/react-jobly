@@ -27,10 +27,10 @@ function CompanyCard({ company }) {
       }
       <Link className="CompanyCard-link" to={`/companies/${company.handle}`}>
         <div className="CompanyCard-name">
-          <h3>{company.name}</h3>
+          {company.name}
         </div>
         <div className="CompanyCard-description">
-          <p>{company.description}</p>
+          {company.description}
         </div>
       </Link>
     </div>
