@@ -26,7 +26,8 @@ function CompanyList() {
     fetchCompanies();
   }, [ ]);
 
-  function filterList() {
+  function filterList(formData) {
+    // call JoblyApi.searchCompanies(formData)
 
   }
 
