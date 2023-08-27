@@ -6,7 +6,7 @@ import "./Navigation.css";
 /** Displays Navigation bar
  *
  * Props:
- *  - none
+ *  - logout(): callback function to logout the user
  *
  * State:
  *  - none
@@ -14,8 +14,6 @@ import "./Navigation.css";
  * App -> Navigation  */
 function Navigation({ logout }) {
   const { user } = useContext(userContext);
-  console.log("USER CONTEXT", userContext)
-  console.log("USER", user);
 
   let activeStyle = {
     fontWeight: "bold"

@@ -1,14 +1,13 @@
 import { useState } from "react";
 
-
 /** Displays signup form
  *
  * Props:
- *  - signUp()
- *    - callback function to jobly app component to handle registration
+ *  - signUp(): callback function to register a user
  *
  * State:
  *  - formData { username, password, firstName, lastName, email }
+ *  - errorMessages: an array of error messages ['message', ...]
  *
  * RoutesList -> SignUpForm */
 function SignUpForm({ signUp }) {
@@ -33,7 +32,6 @@ function SignUpForm({ signUp }) {
   // handle form submission and send user data to app via signUp() callback
   async function handleSubmit(evt) {
     evt.preventDefault();
-    console.log("Handle Submit on Signup. formData:", formData);
     try {
       await signUp(formData);
     } catch (err) {

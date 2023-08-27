@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 /** Displays login form
  *
  * Props:
- *  - login(): callback function for use in LoginForm
+ *  - login(): callback function to login a user
  *
  * State:
  *  - formData { username, password }
@@ -33,7 +33,6 @@ function LoginForm({ login }) {
   // handle form submission and send credentials to app via login() callback
   async function handleSubmit(evt) {
     evt.preventDefault();
-    console.log("Handle Submit on Login. formData:", formData);
     try {
       await login(formData);
     } catch (err) {
