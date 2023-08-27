@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Alert from "./Alert";
+import "./SignUpForm.css";
 
 /** Displays signup form
  *

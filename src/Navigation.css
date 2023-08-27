@@ -11,7 +11,7 @@
   color: white;
 }
 
-.Navigation-jobs-companies {
+.Navigation-jobs-companies, .Navigation-login {
   display: flex;
   justify-content: space-between;
   align-items: center;

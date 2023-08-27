@@ -1,5 +1,6 @@
 import "./Home.css";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import userContext from "./userContext";
 
 /** Displays homepage with a simple greeting
@@ -26,7 +27,10 @@ function Home() {
         ? <h2 className="Home-greeting">{
           `Welcome Back, ${user.firstName}`
           }</h2>
-        : ''
+        : <div className="Home-buttons">
+            <Link to="/login"><button>Log in</button></Link>
+            <Link to="/signup"><button>Sign up</button></Link>
+          </div>
         }
       </div>
     </div>
