@@ -81,6 +81,17 @@ class JoblyApi {
     return res.jobs;
   }
 
+  /** Login and retrieve a token
+   * Expects credentials like { username, password }
+   * Returns true if a token is successfully retrieved
+   * Throws exceptions if server returns unexpected responses
+  */
+  static async login(credentials) {
+    let res = await this.request(`auth/token`, credentials, 'post')
+    console.log("LOGIN", res.token);
+    return res.token ? true : false;
+  }
+
 }
 
 export default JoblyApi;

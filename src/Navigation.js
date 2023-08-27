@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useContext } from "react";
 import userContext from "./userContext";
 import "./Navigation.css";
@@ -81,12 +81,10 @@ function Navigation() {
             Profile
         </NavLink>
 
-        <NavLink
-          className="Navigation-link Navigation-logout"
-          to="/"
-          style={({ isActive }) => isActive ? activeStyle : undefined }>
-            { `Logout ${ user.username }` }
-        </NavLink>
+        <Link className="Navigation-link Navigation-logout" to="/">
+          <span className="Navigation-logoutText">Logout&nbsp;</span>
+        </Link>
+        <span className="Navigation-userName">{`( ${ user.username } )`}</span>
       </div>
     </div>
   );

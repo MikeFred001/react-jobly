@@ -22,3 +22,8 @@
 .Navigation-home {
   font-size: 1.25rem;
 }
+
+.Navigation-userName {
+  color:lightblue;
+  font-style: italic;
+}
