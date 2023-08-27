@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Alert from "./Alert";
 
 /** Displays login form
  *
@@ -61,7 +62,7 @@ function LoginForm({ login }) {
         </input>
         <button>Login</button>
       </form>
-      <div>{errorMessages.map( err => <p>{err}</p>)}</div>
+    {errorMessages.map( err => <Alert message={err} />)}
     </div>
   )
 }

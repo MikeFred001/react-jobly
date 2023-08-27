@@ -42,13 +42,13 @@ class JoblyApi {
 
   static async getUser(username) {
     let res = await JoblyApi.request(`users/${username}`);
-    console.log("GET USER", res.user);
+    // console.log("GET USER", res.user);
     return res.user;
   }
 
   static async getCompany(handle) {
     let res = await JoblyApi.request(`companies/${handle}`);
-    console.log("GET COMPANY", res.company);
+    // console.log("GET COMPANY", res.company);
     return res.company;
   }
 
@@ -56,14 +56,14 @@ class JoblyApi {
   /** Get all companies */
   static async getCompanies() {
     let res = await JoblyApi.request(`companies`);
-    console.log("GET COMPANIES", res.companies);
+    // console.log("GET COMPANIES", res.companies);
     return res.companies;
   }
 
   /** Get all jobs */
   static async getJobs() {
     let res = await JoblyApi.request(`jobs`);
-    console.log("GET JOBS", res.jobs);
+    // console.log("GET JOBS", res.jobs);
     return res.jobs;
   }
 
@@ -73,7 +73,7 @@ class JoblyApi {
    */
   static async searchCompanies(searchTerm) {
     let res = await JoblyApi.request(`companies`, { nameLike: searchTerm });
-    console.log("SEARCH COMPANIES", res.companies);
+    // console.log("SEARCH COMPANIES", res.companies);
     return res.companies;
   }
 
@@ -83,7 +83,7 @@ class JoblyApi {
    */
   static async searchJobs(searchTerm) {
     let res = await JoblyApi.request(`jobs`, { title: searchTerm });
-    console.log("SEARCH JOBS", res.jobs);
+    // console.log("SEARCH JOBS", res.jobs);
     return res.jobs;
   }
 
@@ -94,7 +94,7 @@ class JoblyApi {
   */
   static async login(credentials) {
     let res = await JoblyApi.request(`auth/token`, credentials, 'post');
-    console.log("LOGIN TOKEN", res.token);
+    // console.log("LOGIN TOKEN", res.token);
     JoblyApi.token = res.token;
     return res.token ? true : false;
   }
@@ -106,7 +106,7 @@ class JoblyApi {
    */
   static async register(userData) {
     let res = await JoblyApi.request(`auth/register`, userData, 'post');
-    console.log("REGISTER TOKEN", res.token);
+    // console.log("REGISTER TOKEN", res.token);
     JoblyApi.token = res.token;
     return res.token ? true : false;
   }

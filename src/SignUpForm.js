@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Alert from "./Alert";
 
 /** Displays signup form
  *
@@ -83,7 +84,7 @@ function SignUpForm({ signUp }) {
         </input>
         <button className="SignUpForm-btn">Sign Up</button>
       </form>
-      <div>{errorMessages.map( err => <p>{err}</p>)}</div>
+    {errorMessages.map( err => <Alert message={err} />)}
     </div>
   )
 }
