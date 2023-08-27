@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import JobCardList from "./JobCardList.js";
 import JoblyApi from "./api.js";
 import "./CompanyDetail.css";
@@ -33,7 +33,7 @@ function CompanyDetail() {
       });
     }
     fetchCompany();
-  }, []);
+  }, [handle]);
 
   if (company.isLoading) return <h3>Loading...</h3>;
 
