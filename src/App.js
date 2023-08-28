@@ -41,8 +41,6 @@ function App() {
 
     // check localStorage for a token
     if (localStorage.getItem('userToken') !== null) {
-      console.log("userToken !=== null:", localStorage.getItem('userToken'))
-
       // a token exists, let's try to use it
       const userToken = localStorage.getItem('userToken');
 
@@ -56,22 +54,21 @@ function App() {
       // fetch the user data using our async function
       // this function will fetch user AND update user state
       fetchUser(username);
-
       console.log("username from token:", username);
+
     } else {
+      // there is no token so no auth to be done
+      // set authCheckDone to true so that full app renders logged out state
       setAuthCheckDone(true);
     }
 
     /** Fetches user data for username and updates App user state */
     async function fetchUser(username) {
       try {
-        console.log("isLoading to true")
         const res = await JoblyApi.getUser(username);
         console.log("user received from API in fetchUser()");
         setUser(res);
-        console.log("isLoading to false")
         setAuthCheckDone(true);
-        // TODO: Need to send them to their original destination
       } catch (err) {
         console.log(
           "caught an error attempting to get user with localStorage token")
@@ -84,7 +81,6 @@ function App() {
 
   // Logs in user, gets the user and updates user state.
   async function login(formData) {
-    console.log("login() called within app comp");
     await JoblyApi.login(formData);
     const res = await JoblyApi.getUser(formData.username);
     localStorage.setItem('userToken', JoblyApi.token);
@@ -108,7 +104,6 @@ function App() {
 
   if (authCheckDone === false) return <HomeLoading />;
 
-  console.log("isLoading is false so render nav stuff");
   return (
     <userContext.Provider value={ { user: user } }>
       <BrowserRouter>
