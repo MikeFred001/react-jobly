@@ -105,7 +105,7 @@ function App() {
     setUser(res);
   }
 
-  // TODO: Developer a LoadingHome component
+  // TODO: Develop a LoadingHome component
   if (authCheckDone === false) return <div>Loading ...</div>
 
   console.log("isLoading is false so render nav stuff");
