@@ -23,7 +23,7 @@ function Home() {
         <span className="Home-slogan">
           All the jobs in one, convenient place.</span>
         {
-        user === undefined
+        user !== undefined
         ? <h2 className="Home-greeting">{
           `Welcome Back, ${user.firstName}`
           }</h2>

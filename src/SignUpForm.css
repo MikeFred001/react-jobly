@@ -1,5 +1,6 @@
 .SignUpForm {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -37,4 +38,9 @@
 .SignUpForm-btn:hover {
   cursor: pointer;
   background-color: rgb(0, 80, 251);
+}
+
+.Alerts {
+  display: flex;
+  flex-direction: column;
 }

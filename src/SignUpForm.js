@@ -56,6 +56,7 @@ function SignUpForm({ signUp }) {
         <input
           id="signUpForm-password"
           name="password"
+          type="password"
           value={formData.password}
           onChange={ handleChange }>
         </input>
@@ -85,12 +86,13 @@ function SignUpForm({ signUp }) {
         </input>
         <button className="SignUpForm-btn">Sign Up</button>
       </form>
-    {errorMessages.map( err => <Alert message={err} />)}
+      <div className="SignUpForm-alerts Alerts">
+        {errorMessages.map( err => <Alert key={err} message={err} />)}
+      </div>
     </div>
   )
 }
 
-// password/ key props
 // TODO: format alerts
 
 export default SignUpForm;

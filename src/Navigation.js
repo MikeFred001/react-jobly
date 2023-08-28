@@ -14,6 +14,7 @@ import "./Navigation.css";
  * App -> Navigation  */
 function Navigation({ logout }) {
   const { user } = useContext(userContext);
+  console.log("Navigation rendered. user is:", user)
 
   let activeStyle = {
     fontWeight: "bold"

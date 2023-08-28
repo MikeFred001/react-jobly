@@ -57,15 +57,17 @@ function LoginForm({ login }) {
         <input
           id="loginForm-password"
           name="password"
+          type="password"
           value={ formData.password }
           onChange={ handleChange }>
         </input>
         <button className="LoginForm-btn">Login</button>
       </form>
-    {errorMessages.map( err => <Alert message={err} />)}
+        <div className="LoginForm-alerts Alerts">
+          {errorMessages.map( err => <Alert key={err} message={err} />)}
+        </div>
     </div>
   )
 }
-// TODO: input type: password
-// TODO: key prop on 66
+
 export default LoginForm;
