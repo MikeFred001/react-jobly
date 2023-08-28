@@ -17,14 +17,23 @@ import './App.css';
  *
  * State:
  *  - user { username, firstName, lastName, isAdmin, email }
- *  - destination: the value of window.location.href on mount
+ *  - authCheckDone: keeps track of whether auth check is done or not
  *
  * index -> App -> { Navigation, RoutesList }  */
 
 function App() {
-  console.log("App is rendering");
   const [user, setUser] = useState(undefined);
-  const [destination, setDestination] = useState(window.location.href);
+  const [authCheckDone, setAuthCheckDone] = useState(false);
+
+  console.log("App is rendering");
+  console.log("user is:", user);
+
+  // // this doesn't work
+  // if (user !== undefined && destination !== undefined) {
+  //   console.log("destination:", destination);
+  //   setDestination(undefined);
+  //   navigate(destination);
+  // }
 
   // attempt to fetch token from local storage and set user state
   useEffect( () => {
@@ -48,13 +57,19 @@ function App() {
       fetchUser(username);
 
       console.log("username from token:", username);
+    } else {
+      setAuthCheckDone(true);
     }
 
     /** Fetches user data for username and updates App user state */
     async function fetchUser(username) {
       try {
+        console.log("isLoading to true")
         const res = await JoblyApi.getUser(username);
+        console.log("user received from API in fetchUser()");
         setUser(res);
+        console.log("isLoading to false")
+        setAuthCheckDone(true);
         // TODO: Need to send them to their original destination
       } catch (err) {
         console.log(
@@ -90,14 +105,18 @@ function App() {
     setUser(res);
   }
 
+  // TODO: Developer a LoadingHome component
+  if (authCheckDone === false) return <div>Loading ...</div>
+
+  console.log("isLoading is false so render nav stuff");
   return (
     <userContext.Provider value={ { user: user } }>
-      <div className="App">
-        <BrowserRouter>
+      <BrowserRouter>
+        <div className="App">
           <Navigation logout={ logout }/>
           <RoutesList login={ login } signUp={ signUp }/>
-        </BrowserRouter>
-      </div>
+        </div>
+      </BrowserRouter>
     </userContext.Provider>
   );
 }
