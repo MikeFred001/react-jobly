@@ -12,6 +12,7 @@ import JobCardList from "./JobCardList.js";
  *
  * RoutesList -> CompanyDetail -> JobCardList  */
 function CompanyDetail() {
+  // useParams
   const [company, setCompany] = useState();
 
   return (
@@ -20,5 +21,6 @@ function CompanyDetail() {
     </div>
   )
 }
+// className
 
 export default CompanyDetail;

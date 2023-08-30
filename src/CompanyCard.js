@@ -1,7 +1,7 @@
 /** Renders a company card
  *
  * Props:
- *  - company
+ *  - company // Shape of company data
  *
  * State:
  *  - None
