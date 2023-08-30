@@ -1,15 +1,19 @@
 .Navigation {
   display: flex;
-  margin: 10px;
-
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: rgb(24, 150, 251);
 }
 
 .Navigation-link {
   font-size: 1.25rem;
   margin: 5px;
   text-decoration: none;
+  color: white;
 }
 
 .Navigation-jobs-companies {
+  display: flex;
+  align-items: center;
   margin-left: auto;
 }

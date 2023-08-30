@@ -1,4 +1,5 @@
 import JobCard from "./JobCard.js";
+import "./JobCardList.css";
 
 
 /** Renders a list of JobCards

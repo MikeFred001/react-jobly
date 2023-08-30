@@ -1,4 +1,4 @@
-
+import "./JobCard.css";
 
 /** Renders a job card
  *
@@ -12,16 +12,13 @@
  * JobCardList -> JobCard  */
 function JobCard({ job }) {
 
-  // add commas to salaries for readability
-  job.salary = Number(job.salary).toLocaleString();
-
   return (
     <div className="JobCard">
       <div className="JobCard-title">
-        <h3>{job.title}</h3>
+        {job.title}
       </div>
       <div className="JobCard-company">
-        {job.company === undefined
+        {job.companyName === undefined
           ? ""
           : `${job.companyName}`
         }
@@ -29,7 +26,7 @@ function JobCard({ job }) {
       <div className="JobCard-salary">
         {job.salary === null
           ? "Salary: It's a surprise!"
-          : `Salary: ${job.salary}`
+          : `Salary: ${Number(job.salary).toLocaleString()}`
         }
       </div>
       <div className="JobCard-equity">

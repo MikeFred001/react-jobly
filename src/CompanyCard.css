@@ -1,6 +1,6 @@
 .CompanyCard {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: start;
   background-color: white;
   border-radius: 20px;
@@ -8,6 +8,12 @@
   padding: 15px;
   width: 70%;
   margin: 0 auto 10px;
+}
+
+.CompanyCard-name {
+}
+
+.CompanyCard-description {
 }
 
 .CompanyCard-link {
