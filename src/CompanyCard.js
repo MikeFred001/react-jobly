@@ -1,3 +1,13 @@
+/** Renders a company card
+ *
+ * Props:
+ *  - None
+ *
+ * State:
+ *  - None
+ *
+ * CompanyList -> Company Card  */
+
 function CompanyCard({ company }) {
 
   return (

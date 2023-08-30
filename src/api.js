@@ -42,14 +42,45 @@ class JoblyApi {
 
   static async getCompany(handle) {
     let res = await this.request(`companies/${handle}`);
+    console.log("GET COMPANY", res.company);
     return res.company;
   }
 
-  // obviously, you'll add a lot here ...
 
-  // getCompanies() -- called by CompanyList
-  // getJobs() -- called by JobList
-  // searchCompanies() -- called by CompanyList
-  // searchJobs() -- called by JobList
+  /** Get all companies */
+  static async getCompanies() {
+    let res = await this.request(`companies`);
+    console.log("GET COMPANIES", res.companies);
+    return res.companies;
+  }
+
+  /** Get all jobs */
+  static async getJobs() {
+    let res = await this.request(`jobs`);
+    console.log("GET JOBS", res.jobs);
+    return res.jobs;
+  }
+
+  /** Get companies based on search term. Searching against company name
+   *    Finds all partial matches
+   *    searchTerm = 'string'
+   */
+  static async searchCompanies(searchTerm) {
+    let res = await this.request(`companies`, { nameLike: searchTerm });
+    console.log("SEARCH COMPANIES", res.companies);
+    return res.companies;
+  }
+
+  /** Get jobs based on search term. Searching against job title
+   *    Finds all partial matches
+   *    searchTerm = 'string'
+   */
+  static async searchJobs(searchTerm) {
+    let res = await this.request(`jobs`, { title: searchTerm });
+    console.log("SEARCH JOBS", res.jobs);
+    return res.jobs;
+  }
 
 }
+
+export default JoblyApi;

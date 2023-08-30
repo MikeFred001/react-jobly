@@ -1,6 +1,16 @@
 import { useState } from "react";
 import JobCardList from "./JobCardList.js";
 
+
+/** CompanyDetail, renders list of job cards
+ *
+ * Props:
+ *  - None
+ *
+ * State:
+ *  - company
+ *
+ * RoutesList -> CompanyDetail -> JobCardList  */
 function CompanyDetail() {
   const [company, setCompany] = useState();
 
