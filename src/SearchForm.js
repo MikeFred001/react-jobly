@@ -22,7 +22,7 @@ function SearchForm({ filterList }) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    filterList(formData);
+    filterList(formData.searchTerm);
     setFormData({ searchTerm: "" });
   }
 
