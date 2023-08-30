@@ -13,9 +13,11 @@ import "./Navigation.css";
 function Navigation() {
   return (
     <div className="Navigation">
-      <Link className="Navigation-link" to="/">Home</Link>
-      <Link className="Navigation-link" to="/companies">Companies</Link>
-      <Link className="Navigation-link" to="/jobs">Jobs</Link>
+      <Link className="Navigation-link home" to="/">Jobly</Link>
+      <div className="Navigation-jobs-companies">
+        <Link className="Navigation-link companies" to="/companies">Companies</Link>
+        <Link className="Navigation-link jobs" to="/jobs">Jobs</Link>
+      </div>
     </div>
   );
 }

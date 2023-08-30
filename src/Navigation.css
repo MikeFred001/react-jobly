@@ -1,8 +1,15 @@
 .Navigation {
-  padding-bottom: 20px;
+  display: flex;
+  margin: 10px;
+
 }
 
 .Navigation-link {
   font-size: 1.25rem;
   margin: 5px;
+  text-decoration: none;
+}
+
+.Navigation-jobs-companies {
+  margin-left: auto;
 }

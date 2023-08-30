@@ -1,0 +1,32 @@
+.SearchForm {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  width: 70%;
+}
+
+.SearchForm-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.SearchForm-input {
+  height: 30px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border: none;
+  padding: 3px;
+  width: 80%;
+}
+
+.SearchForm-btn {
+  width: 20%;
+  height: 36px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border: none;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}

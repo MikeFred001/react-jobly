@@ -1,5 +1,6 @@
-
 import { useState } from "react";
+import "./SearchForm.css";
+
 /** Renders search form
  *
  * Props:
@@ -34,9 +35,9 @@ function SearchForm({ filterList }) {
 
   return (
     <div className="SearchForm">
-      <form onSubmit={handleSubmit}>
+      <form className="SearchForm-form" onSubmit={handleSubmit}>
         <label htmlFor="searchTerm"></label>
-        <input
+        <input className="SearchForm-input"
           id="searchTerm"
           name="searchTerm"
           value={formData.searchTerm}
