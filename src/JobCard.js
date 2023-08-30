@@ -1,3 +1,13 @@
+
+/** Renders a job card
+ *
+ * Props:
+ *  - job
+ *
+ * State:
+ *  - None
+ *
+ * JobCardList -> JobCard  */
 function JobCard({ job }) {
 
   return (

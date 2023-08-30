@@ -1,5 +1,15 @@
 import { Link } from "react-router-dom";
 
+
+/** Displays Navigation bar
+ *
+ * Props:
+ *  - none
+ *
+ * State:
+ *  - none
+ *
+ * App -> Navigation  */
 function Navigation() {
   return (
     <div className="Navigation">

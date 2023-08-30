@@ -1,7 +1,7 @@
 /** Renders a company card
  *
  * Props:
- *  - None
+ *  - company
  *
  * State:
  *  - None

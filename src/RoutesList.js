@@ -5,6 +5,16 @@ import JobList from "./JobList.js";
 import CompanyDetail from "./CompanyDetail.js";
 import Home from "./Home.js";
 
+
+/** Handles routing
+ *
+ * Props:
+ *  - none
+ *
+ * State:
+ *  - none
+ *
+ * App -> RoutesList -> { CompanyList, JobList, CompanyDetail, Home }  */
 function RoutesList() {
   return (
     <Routes>
