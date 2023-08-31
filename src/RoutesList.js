@@ -4,6 +4,9 @@ import CompanyList from "./CompanyList.js";
 import JobList from "./JobList.js";
 import CompanyDetail from "./CompanyDetail.js";
 import Home from "./Home.js";
+import LoginForm from "./LoginForm.js";
+import SignUpForm from "./SignUpForm.js";
+import ProfileForm from "./ProfileForm.js";
 
 
 /** Handles routing
@@ -21,6 +24,9 @@ function RoutesList() {
       <Route path="/companies" element={<CompanyList />} />
       <Route path="/jobs" element={<JobList />} />
       <Route path="/companies/:handle" element={<CompanyDetail />} />
+      <Route path="/signup" element={<SignUpForm />} />
+      <Route path="/login" element={<LoginForm />} />
+      <Route path="/profile" element={<ProfileForm />} />
       <Route path="/" element={<Home />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
