@@ -19,7 +19,7 @@ import ProfileForm from "./ProfileForm.js";
  *  - none
  *
  * App -> RoutesList -> { CompanyList, JobList, CompanyDetail, Home }  */
-function RoutesList({ login }) {
+function RoutesList({ login, signUp, logout }) {
 
   /** TODO:
    * - prevent access to restricted pages while logged out
@@ -33,7 +33,7 @@ function RoutesList({ login }) {
       <Route path="/companies/:handle" element={<CompanyDetail />} />
       <Route
         path="/signup"
-        element={<SignUpForm />} />
+        element={<SignUpForm signUp={ signUp } />} />
       <Route
         path="/login"
         element={<LoginForm login={login} />} />

@@ -40,8 +40,14 @@ class JoblyApi {
 
   /** Get details on a company by handle. */
 
+  static async getUser(username) {
+    let res = await JoblyApi.request(`users/${username}`);
+    console.log("GET USER", res.user);
+    return res.user;
+  }
+
   static async getCompany(handle) {
-    let res = await this.request(`companies/${handle}`);
+    let res = await JoblyApi.request(`companies/${handle}`);
     console.log("GET COMPANY", res.company);
     return res.company;
   }
@@ -49,14 +55,14 @@ class JoblyApi {
 
   /** Get all companies */
   static async getCompanies() {
-    let res = await this.request(`companies`);
+    let res = await JoblyApi.request(`companies`);
     console.log("GET COMPANIES", res.companies);
     return res.companies;
   }
 
   /** Get all jobs */
   static async getJobs() {
-    let res = await this.request(`jobs`);
+    let res = await JoblyApi.request(`jobs`);
     console.log("GET JOBS", res.jobs);
     return res.jobs;
   }
@@ -66,7 +72,7 @@ class JoblyApi {
    *    searchTerm = 'string'
    */
   static async searchCompanies(searchTerm) {
-    let res = await this.request(`companies`, { nameLike: searchTerm });
+    let res = await JoblyApi.request(`companies`, { nameLike: searchTerm });
     console.log("SEARCH COMPANIES", res.companies);
     return res.companies;
   }
@@ -76,7 +82,7 @@ class JoblyApi {
    *    searchTerm = 'string'
    */
   static async searchJobs(searchTerm) {
-    let res = await this.request(`jobs`, { title: searchTerm });
+    let res = await JoblyApi.request(`jobs`, { title: searchTerm });
     console.log("SEARCH JOBS", res.jobs);
     return res.jobs;
   }
@@ -87,8 +93,21 @@ class JoblyApi {
    * Throws exceptions if server returns unexpected responses
   */
   static async login(credentials) {
-    let res = await this.request(`auth/token`, credentials, 'post')
-    console.log("LOGIN", res.token);
+    let res = await JoblyApi.request(`auth/token`, credentials, 'post');
+    console.log("LOGIN TOKEN", res.token);
+    JoblyApi.token = res.token;
+    return res.token ? true : false;
+  }
+
+  /** Register user and retrieve a token
+   * Expects userData like { username, password, firstName, lastName, email }
+   * Returns true if a token is successfully retrieved
+   * Throws exceptions if server returns unexpected responses
+   */
+  static async register(userData) {
+    let res = await JoblyApi.request(`auth/register`, userData, 'post');
+    console.log("REGISTER TOKEN", res.token);
+    JoblyApi.token = res.token;
     return res.token ? true : false;
   }
 

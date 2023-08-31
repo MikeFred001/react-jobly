@@ -19,6 +19,7 @@ function SignUpForm({ signUp }) {
     lastName: "",
     email: ""
   });
+  const [errorMessages, setErrorMessages] = useState([]);
 
   // update form input
   function handleChange(evt) {
@@ -29,60 +30,63 @@ function SignUpForm({ signUp }) {
     }));
   }
 
-  function handleSubmit(evt) {
+  // handle form submission and send user data to app via signUp() callback
+  async function handleSubmit(evt) {
     evt.preventDefault();
-    signUp(formData);
-    setFormData({
-      username: "",
-      password: "",
-      firstName: "",
-      lastName: "",
-      email: ""
-    });
+    console.log("Handle Submit on Signup. formData:", formData);
+    try {
+      await signUp(formData);
+    } catch (err) {
+      setErrorMessages(err);
+    }
   }
 
   return(
-    <form className="SignUpForm" onSubmit={ handleSubmit }>
-      <label htmlFor="signUpForm-username">Username</label>
-      <input
-        id="signUpForm-username"
-        name="username"
-        value={formData.username}
-        onChange={ handleChange }>
-      </input>
+    <div className="SignUpForm">
+      <form className="SignUpForm-form" onSubmit={ handleSubmit }>
+        <label htmlFor="signUpForm-username">Username</label>
+        <input
+          id="signUpForm-username"
+          name="username"
+          value={formData.username}
+          onChange={ handleChange }>
+        </input>
 
-      <label htmlFor="signUpForm-password">Password</label>
-      <input
-        id="signUpForm-password"
-        name="password"
-        value={formData.password}
-        onChange={ handleChange }>
-      </input>
+        <label htmlFor="signUpForm-password">Password</label>
+        <input
+          id="signUpForm-password"
+          name="password"
+          value={formData.password}
+          onChange={ handleChange }>
+        </input>
 
-      <label htmlFor="signUpForm-firstName">First Name</label>
-      <input
-        id="signUpForm-firstName"
-        name="firstName"
-        value={formData.firstName}
-        onChange={ handleChange }>
-      </input>
+        <label htmlFor="signUpForm-firstName">First Name</label>
+        <input
+          id="signUpForm-firstName"
+          name="firstName"
+          value={formData.firstName}
+          onChange={ handleChange }>
+        </input>
 
-      <label htmlFor="signUpForm-lastName">Last Name</label>
-      <input
-        id="signUpForm-lastName"
-        name="lastName"
-        value={formData.lastName}
-        onChange={ handleChange }>
-      </input>
+        <label htmlFor="signUpForm-lastName">Last Name</label>
+        <input
+          id="signUpForm-lastName"
+          name="lastName"
+          value={formData.lastName}
+          onChange={ handleChange }>
+        </input>
 
-      <label htmlFor="signUpForm-email">Email</label>
-      <input
-        id="signUpForm-email"
-        name="email"
-        value={formData.email}
-        onChange={ handleChange }>
-      </input>
-    </form>
+        <label htmlFor="signUpForm-email">Email</label>
+        <input
+          id="signUpForm-email"
+          name="email"
+          value={formData.email}
+          onChange={ handleChange }>
+        </input>
+        <button className="SignUpForm-btn">Sign Up</button>
+      </form>
+      <div>{errorMessages.map( err => <p>{err}</p>)}</div>
+    </div>
   )
 }
 

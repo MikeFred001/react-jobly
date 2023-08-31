@@ -36,10 +36,6 @@ function LoginForm({ login }) {
     console.log("Handle Submit on Login. formData:", formData);
     try {
       await login(formData);
-      setFormData({
-        username: "",
-        password: ""
-      });
     } catch (err) {
       setErrorMessages(err);
     }

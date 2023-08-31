@@ -17,29 +17,33 @@ import JoblyApi from './api';
  *
  * index -> App -> { Navigation, RoutesList }  */
 function App() {
-  let initialUser;
-  // const initialUser = {
-  //   "username": "jasonjobly",
-  //   "firstName": "Jason",
-  //   "lastName": "McJobly",
-  //   "email": "jasjob@outlook.com",
-  //   "isAdmin": false,
-  //   "applications": []
-  // };
-  const [user, setUser] = useState(initialUser);
+  const [user, setUser] = useState();
 
+  // Logs in user, gets the user and updates user state.
   async function login(formData) {
     await JoblyApi.login(formData);
-    // const res = await JoblyApi.getUser();
-    // setUser(user);
+    const res = await JoblyApi.getUser(formData.username);
+    setUser(res);
   }
+
+  async function logout() {
+
+  }
+
+  // Registers user, gets the user and updates user state.
+  async function signUp(formData) {
+    await JoblyApi.register(formData);
+    const res = await JoblyApi.getUser(formData.username);
+    setUser(res);
+  }
+
 
   return (
     <userContext.Provider value={ { user: user } }>
       <div className="App">
         <BrowserRouter>
           <Navigation />
-          <RoutesList login={login} />
+          <RoutesList login={ login } signUp={ signUp }/>
         </BrowserRouter>
       </div>
     </userContext.Provider>
@@ -47,3 +51,7 @@ function App() {
 }
 
 export default App;
+
+/* eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pa2VmcmVk
+IiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY5MzUyNDQ2OH0.ovf3U_caT-VXB8FLhkTs
+2fmwkXuZh-NzWwpX1xDjjUg */
