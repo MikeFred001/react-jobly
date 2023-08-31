@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navigation.css";
 
 /** Displays Navigation bar
@@ -11,12 +11,34 @@ import "./Navigation.css";
  *
  * App -> Navigation  */
 function Navigation() {
+
+  let activeStyle = {
+    fontWeight: "bold"
+  };
+
   return (
     <div className="Navigation">
-      <Link className="Navigation-link home" to="/">Jobly</Link>
+      <NavLink
+        className="Navigation-link Navigation-home"
+        to="/"
+        style={({ isActive }) => isActive ? activeStyle : undefined }>
+          Jobly
+      </NavLink>
+
       <div className="Navigation-jobs-companies">
-        <Link className="Navigation-link companies" to="/companies">Companies</Link>
-        <Link className="Navigation-link jobs" to="/jobs">Jobs</Link>
+        <NavLink
+          className="Navigation-link Navigation-companies"
+          to="/companies"
+          style={({ isActive }) => isActive ? activeStyle : undefined }>
+            Companies
+        </NavLink>
+
+        <NavLink
+          className="Navigation-link Navigation-jobs"
+          to="/jobs"
+          style={({ isActive }) => isActive ? activeStyle : undefined }>
+            Jobs
+        </NavLink>
       </div>
     </div>
   );

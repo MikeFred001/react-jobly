@@ -1,0 +1,16 @@
+.CompanyDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CompanyDetail-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.CompanyDetail-description {
+  width: 70%;
+  text-align: center;
+  margin: 10px;
+}

@@ -6,7 +6,6 @@
 }
 
 .Navigation-link {
-  font-size: 1.25rem;
   margin: 5px;
   text-decoration: none;
   color: white;
@@ -14,6 +13,12 @@
 
 .Navigation-jobs-companies {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-left: auto;
+  min-width: 160px;
+}
+
+.Navigation-home {
+  font-size: 1.25rem;
 }
