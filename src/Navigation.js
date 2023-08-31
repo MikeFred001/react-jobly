@@ -12,7 +12,7 @@ import "./Navigation.css";
  *  - none
  *
  * App -> Navigation  */
-function Navigation() {
+function Navigation({ logout }) {
   const { user } = useContext(userContext);
   console.log("USER CONTEXT", userContext)
   console.log("USER", user);
@@ -81,7 +81,8 @@ function Navigation() {
             Profile
         </NavLink>
 
-        <Link className="Navigation-link Navigation-logout" to="/">
+        <Link className="Navigation-link Navigation-logout" to="/"
+          onClick={ logout }>
           <span className="Navigation-logoutText">Logout&nbsp;</span>
         </Link>
         <span className="Navigation-userName">{`( ${ user.username } )`}</span>

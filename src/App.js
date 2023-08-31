@@ -26,8 +26,10 @@ function App() {
     setUser(res);
   }
 
-  async function logout() {
-
+  // Clears token and user state
+  function logout() {
+    JoblyApi.token = undefined;
+    setUser(undefined);
   }
 
   // Registers user, gets the user and updates user state.
@@ -42,7 +44,7 @@ function App() {
     <userContext.Provider value={ { user: user } }>
       <div className="App">
         <BrowserRouter>
-          <Navigation />
+          <Navigation logout={ logout }/>
           <RoutesList login={ login } signUp={ signUp }/>
         </BrowserRouter>
       </div>
