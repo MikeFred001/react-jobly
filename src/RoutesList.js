@@ -26,7 +26,7 @@ import ProfileForm from "./ProfileForm.js";
 function RoutesList({ login, signUp }) {
   const { user } = useContext(userContext);
 
-  if (user) {
+  if (user === undefined) {
     // user is logged in
     return (
       <Routes>

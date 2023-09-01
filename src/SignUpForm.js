@@ -90,4 +90,7 @@ function SignUpForm({ signUp }) {
   )
 }
 
+// password/ key props
+// TODO: format alerts
+
 export default SignUpForm;

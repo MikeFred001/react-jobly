@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import RoutesList from "./RoutesList.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import Navigation from "./Navigation.js";
 import userContext from "./userContext.js";
@@ -13,12 +12,14 @@ import JoblyApi from './api';
  *  - None
  *
  * State:
- *  - None
+ *  - user { username, firstName, lastName, isAdmin, email }
  *
  * index -> App -> { Navigation, RoutesList }  */
+// TODO: Update state in docstring
+// Use state for token
 
 function App() {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(undefined);
 
   // Logs in user, gets the user and updates user state.
   async function login(formData) {

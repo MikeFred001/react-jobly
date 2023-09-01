@@ -88,5 +88,6 @@ function Navigation({ logout }) {
     </div>
   );
 }
+// TODO: format links for properties to have own lines
 
 export default Navigation;

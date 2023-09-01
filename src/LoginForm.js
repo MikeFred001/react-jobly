@@ -42,7 +42,6 @@ function LoginForm({ login }) {
     }
   }
 
-  // TODO: Refactor error message into alert component
   return(
     <div className="LoginForm">
       <form className="LoginForm-form" onSubmit={handleSubmit}>
@@ -67,5 +66,6 @@ function LoginForm({ login }) {
     </div>
   )
 }
-
+// TODO: input type: password
+// TODO: key prop on 66
 export default LoginForm;
