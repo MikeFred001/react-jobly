@@ -1,5 +1,14 @@
 import "./HomeLoading.css";
 
+/** Renders loading indicator for landing page
+ *
+ * Props:
+ *  - None
+ *
+ * State:
+ *  - none
+ *
+ * App -> HomeLoading  */
 function HomeLoading() {
 
   return (
