@@ -7,6 +7,7 @@ import JoblyApi from './api';
 import RoutesList from "./RoutesList.js";
 import Navigation from "./Navigation.js";
 import userContext from "./userContext.js";
+import HomeLoading from "./HomeLoading";
 
 import './App.css';
 
@@ -105,8 +106,7 @@ function App() {
     setUser(res);
   }
 
-  // TODO: Develop a LoadingHome component
-  if (authCheckDone === false) return <div>Loading ...</div>
+  if (authCheckDone === false) return <HomeLoading />;
 
   console.log("isLoading is false so render nav stuff");
   return (

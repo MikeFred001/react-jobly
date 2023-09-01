@@ -1,0 +1,9 @@
+.Alert {
+  height: 15px;
+  background-color: rgb(253, 176, 176);
+  border: solid 1px rgb(255, 97, 97);
+  color: rgb(128, 0, 0);
+  margin: 5px;
+  border-radius: 5px;
+  padding: 10px;
+}

@@ -1,0 +1,13 @@
+.HomeLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+.HomeLoading-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}

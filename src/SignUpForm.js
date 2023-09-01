@@ -87,12 +87,11 @@ function SignUpForm({ signUp }) {
         <button className="SignUpForm-btn">Sign Up</button>
       </form>
       <div className="SignUpForm-alerts Alerts">
-        {errorMessages.map( err => <Alert key={err} message={err} />)}
+        {errorMessages.map( err =>
+          <Alert key={err} message={err.replace("instance.", "")} />)}
       </div>
     </div>
   )
 }
-
-// TODO: format alerts
 
 export default SignUpForm;

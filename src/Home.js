@@ -24,18 +24,18 @@ function Home() {
           All the jobs in one, convenient place.</span>
         {
         user !== undefined
-        ? <h2 className="Home-greeting">{
-          `Welcome Back, ${user.firstName}`
-          }</h2>
-        : <div className="Home-buttons">
-            <Link to="/login">
-              <button className="Home-login-btn">Log in</button>
-            </Link>
+          ? <h2 className="Home-greeting">{
+            `Welcome Back, ${user.firstName}`
+            }</h2>
+          : <div className="Home-buttons">
+              <Link to="/login">
+                <button className="Home-login-btn">Log in</button>
+              </Link>
 
-            <Link to="/signup">
-              <button className="Home-signup-btn">Sign up</button>
-            </Link>
-          </div>
+              <Link to="/signup">
+                <button className="Home-signup-btn">Sign up</button>
+              </Link>
+            </div>
         }
       </div>
     </div>

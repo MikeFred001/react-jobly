@@ -80,15 +80,16 @@ function Navigation({ logout }) {
             Profile
         </NavLink>
 
-        <Link className="Navigation-link Navigation-logout" to="/"
+        <Link
+          className="Navigation-link Navigation-logout"
+          to="/"
           onClick={ logout }>
-          <span className="Navigation-logoutText">Logout&nbsp;</span>
+            <span className="Navigation-logoutText">Logout&nbsp;</span>
         </Link>
         <span className="Navigation-userName">{`( ${ user.username } )`}</span>
       </div>
     </div>
   );
 }
-// TODO: format links for properties to have own lines
 
 export default Navigation;

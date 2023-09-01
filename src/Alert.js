@@ -1,4 +1,4 @@
-// import "./Alert.css";
+import "./Alert.css";
 
 /** Renders an alert message
  *
