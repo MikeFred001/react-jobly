@@ -1,16 +1,14 @@
-
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
 import userContext from "./userContext";
 
-import CompanyList from "./CompanyList.js";
-import JobList from "./JobList.js";
-import CompanyDetail from "./CompanyDetail.js";
+import CompanyList from "./Companies/CompanyList.js";
+import CompanyDetail from "./Companies/CompanyDetail.js";
+import JobList from "./Jobs/JobList.js";
+import LoginForm from "./Users/LoginForm.js";
+import SignUpForm from "./Users/SignUpForm.js";
+import ProfileForm from "./Users/ProfileForm.js";
 import Home from "./Home.js";
-import LoginForm from "./LoginForm.js";
-import SignUpForm from "./SignUpForm.js";
-import ProfileForm from "./ProfileForm.js";
-// import { v4 as uuid } from "uuid";
 
 
 /** Handles routing
