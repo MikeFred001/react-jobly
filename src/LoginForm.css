@@ -1,0 +1,41 @@
+.LoginForm {
+  display: flex;
+  justify-content: center;
+}
+
+.LoginForm-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.LoginForm-form > input {
+  height: 25px;
+  border-radius: 7px;
+  border: none;
+  padding: 3px;
+  margin-bottom: 5px;
+  border: 2px solid rgb(18, 125, 251);
+}
+
+.LoginForm-form > label {
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.LoginForm-btn {
+  height: 31px;
+  border-radius: 7px;
+  margin-top: 8px;
+  border: none;
+  background-color: rgb(18, 125, 251);
+  color: white;
+  font-weight: bold;
+  transition: all .2s ease-in-out
+}
+
+.LoginForm-btn:hover {
+  cursor: pointer;
+  background-color: rgb(0, 80, 251);
+}

@@ -61,7 +61,7 @@ function LoginForm({ login }) {
           value={ formData.password }
           onChange={ handleChange }>
         </input>
-        <button>Login</button>
+        <button className="LoginForm-btn">Login</button>
       </form>
     {errorMessages.map( err => <Alert message={err} />)}
     </div>

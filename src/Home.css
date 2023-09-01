@@ -12,6 +12,38 @@
   text-align: center;
 }
 
+.Home-tagline {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
 .Home-slogan {
   font-size: 1.5rem;
+}
+
+.Home-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.Home-login-btn, .Home-signup-btn {
+  height: 30px;
+  border-radius: 7px;
+  margin: 10px 5px;
+  border: none;
+  background-color: rgb(18, 125, 251);
+  color: white;
+  font-weight: bold;
+  transition: all .2s ease-in-out;
+}
+
+.Home-login-btn:hover, .Home-signup-btn:hover {
+  cursor: pointer;
+  background-color: rgb(0, 80, 251);
+}
+
+.Home-greeting {
+  display: flex;
+  justify-content: center;
 }

@@ -2,7 +2,7 @@
   display: flex;
   margin-bottom: 30px;
   padding: 5px;
-  background-color: rgb(24, 150, 251);
+  background-color: rgb(18, 125, 251);
 }
 
 .Navigation-link {
@@ -13,10 +13,9 @@
 
 .Navigation-jobs-companies, .Navigation-login {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-left: auto;
-  min-width: 160px;
 }
 
 .Navigation-home {

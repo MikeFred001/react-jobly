@@ -14,7 +14,7 @@ import userContext from "./userContext";
  * RoutesList -> Home  */
 function Home() {
   const { user } = useContext(userContext);
-  console.log("USER CONTEXT", userContext)
+  console.log("USER CONTEXT", userContext);
 
   return (
     <div className="Home">
@@ -28,8 +28,13 @@ function Home() {
           `Welcome Back, ${user.firstName}`
           }</h2>
         : <div className="Home-buttons">
-            <Link to="/login"><button>Log in</button></Link>
-            <Link to="/signup"><button>Sign up</button></Link>
+            <Link to="/login">
+              <button className="Home-login-btn">Log in</button>
+            </Link>
+
+            <Link to="/signup">
+              <button className="Home-signup-btn">Sign up</button>
+            </Link>
           </div>
         }
       </div>
